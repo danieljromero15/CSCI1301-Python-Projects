@@ -27,6 +27,8 @@ speeds.append(int(input("Enter the speed of the car: ")))
 #carSpeeds = {}
 
 print("The list of the cars and corresponding speeds is:")
+#mostly just for fun and experimenting with dicts,
+#you have to convert to list anyways to perform list operations
 carDict(cars, speeds)
 print()
 print(cars, speeds)
