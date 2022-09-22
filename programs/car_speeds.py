@@ -35,5 +35,7 @@ print(cars, speeds)
 avgSpeed = sum(speeds) / len(speeds)
 print("Average speed: " + str(avgSpeed))
 
+#finds the index of the highest speed value
 highSpeedIndex = speeds.index(max(speeds))
-print("Car with highest speed: " + str(cars[highSpeedIndex]))
+#prints car with highest speed based on index and prints speed based off same index
+print("Car with highest speed: " + str(cars[highSpeedIndex]) + ", " + str(speeds[highSpeedIndex]) + "mph")
