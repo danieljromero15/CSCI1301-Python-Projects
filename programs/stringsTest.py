@@ -11,5 +11,5 @@ last_name = 'Johnson'
 print(f'{last_name}, {first_name[0]}.')
 
 # 000 00 0000
-ssn = '123 45 6789'
+ssn = '123 45 6789' #im gonna hardcode my shit until the moment someone else uses my program, not inputting speeds up execution
 print(f"{ssn[0]} {ssn[4]} {ssn[7]}")
