@@ -7,9 +7,42 @@
 product_list = []
 price_list = []
 
-for x in range(0,4):
+#function to change 1 to 1st, 2 to 2nd, 3 to 3rd, and so on
+#only properly works for 1-5, which is all that is needed for this program
+def numSuffix(num):
+    #num = number // 10**n % 10 #taken from stackoverflow
+    #print(num) #commented because it was for debug for above line
+    if(num == 1):
+        return str(num) + "st"
+    elif(num == 2):
+        return str(num) + "nd"
+    elif(num == 3):
+        return str(num) + "rd"
+    else:
+        return str(num) + "th"
+
+for x in range(0,5):
+    #might need to add another if else for this
     tempProductInfo = input("Name of product " + str(x+1) + ": ")
-    tempProductPrice = input("Price of the product: ")
+    tempProductPrice = float(input("Price of the product: "))
+    #print(tempProductInfo)
+    #print(tempProductPrice)
+
     # I would use a switch statement but I'm worried about zybooks's ability to handle it
-    print(tempProductInfo)
-    print(tempProductPrice)
+    if(x < 2 or x > 3):
+        # Add to the end of the list
+        product_list.append(tempProductInfo)
+        price_list.append(tempProductPrice)
+    elif(x >= 2 or x <= 3):
+        # After the 1st product, so index 1
+        # number 4 follows the same rule
+        product_list.insert(x-1, tempProductInfo)
+        price_list.insert(x-1, tempProductPrice)
+    else:
+        print(error)
+        exit()
+    
+    #might need to add another if else for this
+    print("\nInventory after the " + numSuffix(x+1) + " product is added to the end:")
+    print(product_list, price_list)
+    print()
