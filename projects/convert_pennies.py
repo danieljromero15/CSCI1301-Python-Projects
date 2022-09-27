@@ -2,6 +2,7 @@
 
 # Daniel Romero
 # CSCI 1301-HY8, Fall 2022
+# Dr. Abi Salimi
 
 #input pennies
 penniesLeft = int(input('Enter the amount of pennies to convert: '))
