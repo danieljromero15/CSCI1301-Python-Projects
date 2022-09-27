@@ -52,10 +52,69 @@ for x in range(0,5):
         product_list.insert(x-1, tempProductInfo)
         price_list.insert(x-1, tempProductPrice)
     else:
-        print(error)
+        print("Error")
         exit()
     
     #might need to add another if else for this
     print("\nInventory after the " + numSuffix(x+1) + " product is added" + productInputEndingInventory[x] +":")
     print(product_list, price_list)
     print()
+
+#asks for the percent increase and makes sure it's within the correct bounds
+print("By What percentage do you want to increase the product prices? (0-100): ", end='')
+percent_increase = -1
+while(percent_increase < 0):
+    percent_increase = float(input())
+    percent_increase = percent_increase * 0.01
+    if(not (0 < percent_increase < 1)):
+        print("Invalid value, please try again.")
+        print(percent_increase)
+        percent_increase = -1
+
+# increases each value in price_list
+for price in price_list:
+    #print(price)
+    modPrice = price * (1 + percent_increase)
+    price_list[price_list.index(price)] = modPrice
+
+print("\nInventory after all the prices are increased by " + str(int(percent_increase / 0.01)) + " percent:")
+print(product_list, price_list)
+print()
+
+#removes product from inventory
+remIndex = product_list.index(input("Name of the product to remove from inventory: "))
+remName = product_list[remIndex]
+product_list.remove(product_list[remIndex])
+price_list.remove(price_list[remIndex])
+
+print("\nInventory after " + remName + " is removed from the inventory:")
+print(product_list, price_list)
+print()
+
+#prints average price of inventory
+priceAvg = sum(price_list) / len(price_list)
+print("The average price of " + str(len(price_list)) + " products is " + str(priceAvg))
+
+#reverses inventory
+print()
+print("Original inventory:")
+print(product_list, price_list)
+print()
+print("Reversed inventory:")
+product_list.reverse()
+price_list.reverse()
+print(product_list, price_list)
+
+#prints minimum value
+minIndex = price_list.index(min(price_list))
+print("\nThe least expensive product " + product_list[minIndex] + " costs " + str(price_list[minIndex]) + " Dollars.")
+print("\n")
+
+print("Products and respective prices side by side:")
+print("Product\t\t\t\tPrice")
+print("-------\t\t\t\t-----")
+for product in product_list:
+    print(product + "\t\t\t\t" + str(price_list[product_list.index(product)]))
+
+print("\n")
+print("Have a nice day!")
