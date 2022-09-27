@@ -22,8 +22,21 @@ def numSuffix(num):
         return str(num) + "th"
 
 for x in range(0,5):
-    #might need to add another if else for this
-    tempProductInfo = input("Name of product " + str(x+1) + ": ")
+
+    #wrote these lists so I didn't have to resort to a massive if else
+    productInputEnding = ["",
+    " to add to the end", 
+    " to add after the 1st product",
+    " to insert in position 3 of inventory",
+    " to add to the end of the inventory"]
+    productInputEndingInventory = [" to it",
+    " to the end",
+    " after the 1st product",
+    " to position 3",
+    " to the end of the inventory"]
+
+    #asks for name and price of product
+    tempProductInfo = input("Name of product " + str(x+1) + productInputEnding[x] +": ")
     tempProductPrice = float(input("Price of the product: "))
     #print(tempProductInfo)
     #print(tempProductPrice)
@@ -43,6 +56,6 @@ for x in range(0,5):
         exit()
     
     #might need to add another if else for this
-    print("\nInventory after the " + numSuffix(x+1) + " product is added to the end:")
+    print("\nInventory after the " + numSuffix(x+1) + " product is added" + productInputEndingInventory[x] +":")
     print(product_list, price_list)
     print()
