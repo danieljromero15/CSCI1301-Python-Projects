@@ -33,10 +33,10 @@ for x in range(0,5):
     " to the end",
     " after the 1st product",
     " to position 3",
-    " to the end of the inventory"]
+    " to the end of inventory"]
 
     #asks for name and price of product
-    tempProductInfo = input("Name of product " + str(x+1) + productInputEnding[x] +": ")
+    tempProductInfo = input("Name of product " + str(x+1) + productInputEnding[x] + ": ")
     tempProductPrice = float(input("Price of the product: "))
     #print(tempProductInfo)
     #print(tempProductPrice)
@@ -61,7 +61,7 @@ for x in range(0,5):
     print()
 
 #asks for the percent increase and makes sure it's within the correct bounds
-print("By What percentage do you want to increase the product prices? (0-100): ", end='')
+print("By what percentage do you want to increase the product prices? (0-100): ", end='')
 percent_increase = -1
 while(percent_increase < 0):
     percent_increase = float(input())
@@ -75,7 +75,7 @@ while(percent_increase < 0):
 for price in price_list:
     #print(price)
     modPrice = price * (1 + percent_increase)
-    price_list[price_list.index(price)] = modPrice
+    price_list[price_list.index(price)] = round(modPrice, 5)
 
 print("\nInventory after all the prices are increased by " + str(int(percent_increase / 0.01)) + " percent:")
 print(product_list, price_list)
@@ -111,10 +111,9 @@ print("\nThe least expensive product " + product_list[minIndex] + " costs " + st
 print("\n")
 
 print("Products and respective prices side by side:")
-print("Product\t\t\t\tPrice")
-print("-------\t\t\t\t-----")
+print("Product \tPrice")
+print("------- \t-----")
 for product in product_list:
-    print(product + "\t\t\t\t" + str(price_list[product_list.index(product)]))
+    print(product + " \t\t " + str(price_list[product_list.index(product)]))
 
-print("\n")
-print("Have a nice day!")
+print("\nHave a nice day!")
