@@ -4,6 +4,7 @@
 # CSCI 1301-HY8, Fall 2022
 # Dr. Abi Salimi
 
+#var init
 product_list = []
 price_list = []
 
@@ -48,10 +49,10 @@ for x in range(0,5):
         price_list.append(tempProductPrice)
     elif(x >= 2 or x <= 3):
         # After the 1st product, so index 1
-        # number 4 follows the same rule
+        # 3 and 4 follow the same rule
         product_list.insert(x-1, tempProductInfo)
         price_list.insert(x-1, tempProductPrice)
-    else:
+    else: # error handling
         print("Error")
         exit()
     
