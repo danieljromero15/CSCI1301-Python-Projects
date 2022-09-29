@@ -1,6 +1,5 @@
 import math
 
-
 binaryNum = int(input("Type in a binary number (without spaces): "))
 
 # adds each number to a list
