@@ -8,6 +8,7 @@ print(f'{number_list=}')
 increase_num = int(input("Enter a number to increase by: "))
 
 #my brain hurts today
+#I like his solution better and it would be exactly what I would have done if my brain existed today
 number_list_new = []
 for num in number_list:
     num += increase_num
