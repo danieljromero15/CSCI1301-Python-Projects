@@ -28,14 +28,14 @@ def binary_search(list_to_search, target):
 
     #m_list.append(m)
     if x == list_to_search[m]:
-        return i
+        return i+1
     else:
         return 0
 
 list = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z']
 
 # put letter to search here
-print(binary_search(list, 'Y') + 1)
+print(binary_search(list, 'Y'))
 '''
 print(i_list)
 print(j_list)
