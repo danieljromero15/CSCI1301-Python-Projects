@@ -1,6 +1,6 @@
 #number_list[10,15,20]
 number_list = []
-for i in range(10, 51, 5):
+for i in range(10, 150 + 1, 5):
     number_list.append(i)
 
 print(f'{number_list=}')
