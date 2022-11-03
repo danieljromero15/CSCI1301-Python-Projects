@@ -5,4 +5,5 @@ class number, section # and professor name.
 Title: Computing Factorial of a Number  
 Student name: John Student Doe  
 Class: CSCI 1301 – Section xx  
-Professor: Dr. Abi Salimi  
+Professor: Dr. Abi Salimi
+Purpose: 
