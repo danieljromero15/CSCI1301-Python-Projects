@@ -1,12 +1,7 @@
 # calculator
 
-operation = 0
-
 #prints menu
 def menu():
-    # sets it so that operation can be changed globally
-    global operation
-    
     #while operation != 5: #moved to main program because this was kinda dumb
     print("1) Add\n" +
     "2) Subtract\n" +
@@ -25,13 +20,15 @@ def menu():
         userChoiceInt = 0
 
     if(1 <= userChoiceInt <= 5):
-        operation = userChoiceInt
+        return userChoiceInt
     else:
         print("Invalid choice. Please try again.")
         print()
+        return 0
+    
 
 #performs math operations based on selection
-def mathematics(x,y):
+def mathematics(x,y, operation):
     if operation == 1:
         return x + y
     elif operation == 2:
@@ -41,13 +38,16 @@ def mathematics(x,y):
     elif operation == 4:
         return x / y
 
-while operation != 5:
-    menu()
+userSelect = 0
+
+#var names are a bit confusing rn, sorry!
+while userSelect != 5:
+    userSelect = menu()
     #print(operation)
-    if operation != 5:
+    if userSelect != 5:
         #number input
         num1 = int(input("Please enter the first number: "))
         num2 = int(input("Please enter the second number: "))
 
-        print(f'Result: {mathematics(num1, num2)}')
+        print(f'Result: {mathematics(num1, num2, userSelect)}')
         print()
