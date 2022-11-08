@@ -29,18 +29,26 @@ def menu():
 
 #performs math operations based on selection
 def mathematics(x,y, operation):
+    #init var
+    result = 0
+
     if operation == 1:
-        print(f'{x} + {y} = {x+y}')
-        return x + y
+        result = x + y
+        print(f'{x} + {y} = {result}')
     elif operation == 2:
-        print(f'{x} - {y} = {x-y}')
-        return x - y
+        result = x - y
+        print(f'{x} - {y} = {result}')
     elif operation == 3:
-        print(f'{x} * {y} = {x*y}')
-        return x * y
+        result = x * y
+        print(f'{x} * {y} = {result}')
     elif operation == 4:
-        print(f'{x} / {y} = {x/y}')
-        return x / y
+        result = x / y
+        print(f'{x} / {y} = {result}')
+    else:
+        print("Error")
+        return None
+
+    return result
 
 userSelect = 0
 
