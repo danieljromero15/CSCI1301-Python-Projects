@@ -66,5 +66,5 @@ while userSelect != 5:
         print()
 '''
 
-userString = 'print(' + input("Math pls: ") + ')'
+userString = "print(f'{" + input("Math pls: ") + ' = }\')'
 exec(userString)
