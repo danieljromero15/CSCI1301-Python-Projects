@@ -30,12 +30,16 @@ def menu():
 #performs math operations based on selection
 def mathematics(x,y, operation):
     if operation == 1:
+        print(f'{x} + {y} = {x+y}')
         return x + y
     elif operation == 2:
+        print(f'{x} - {y} = {x-y}')
         return x - y
     elif operation == 3:
+        print(f'{x} * {y} = {x*y}')
         return x * y
     elif operation == 4:
+        print(f'{x} / {y} = {x/y}')
         return x / y
 
 userSelect = 0
