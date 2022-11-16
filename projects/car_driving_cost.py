@@ -43,7 +43,7 @@ if __name__ == '__main__':
     
     for i in range(carNum):
         print("for car", (i+1))
-        car = Car() # currently makes a new 'Car' object on each loop and overwrites the previous 'Car' object stored to var 'car'. The intention of this is to append each object to a list or something similar, but this function is currently not implemented.
+        car = Car() # currently makes a new 'Car' object on each loop and overwrites the previous 'Car' object stored to var 'car'. The intention of this is to append each object to a list or something similar, but this function is currently not implemented since the zybooks assignment doesn't require it.
 
         # inputs
         car.miles_per_gallon = float(input("Enter miles per gallon: "))
