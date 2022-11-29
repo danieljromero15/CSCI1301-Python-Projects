@@ -21,13 +21,14 @@ def create_cars(num_cars, startID, min_speed, max_speed):
     return cars
 
 #input for number of cars
-n = input("Enter the number of cars: ")
-ID = input("Enter the starting car ID: ")
-min = input("Enter the minimum speed of the cars: ")
-max = input("Enter the maximum speed of the cars: ")
+n = int(input("Enter the number of cars: "))
+ID = int(input("Enter the starting car ID: "))
+min = int(input("Enter the minimum speed of the cars: "))
+max = int(input("Enter the maximum speed of the cars: "))
 
 cars_list = create_cars(n, ID, min, max)
 
+print()
 print("Created cars are:")
 for car in cars_list:
-    car.displayinfo()
+    print(car.displayinfo())
