@@ -26,9 +26,50 @@ ID = int(input("Enter the starting car ID: "))
 min = int(input("Enter the minimum speed of the cars: "))
 max = int(input("Enter the maximum speed of the cars: "))
 
+speedTotal = 0
+topSpeed = 0
+
 cars_list = create_cars(n, ID, min, max)
+top_speed_cars = []
 
 print()
 print("Created cars are:")
 for car in cars_list:
     print(car.displayinfo())
+    speedTotal += car.topSpeed
+    if car.topSpeed >= topSpeed:
+        topSpeed = car.topSpeed
+
+#needs to be after other loop because def topSpeed var
+for car in cars_list:
+    if car.topSpeed == topSpeed:
+        top_speed_cars.append(car)
+
+print()
+
+#avg speed
+cars_list_length = len(cars_list)
+#for car in cars_list:
+#    speedTotal += car.topSpeed
+
+avgSpeed = speedTotal / cars_list_length
+print(f'Average speed of all the cars: {avgSpeed}')
+
+print()
+
+print(f'The highest speed is {topSpeed}')
+print('The following cars have the above speed:')
+for car in top_speed_cars:
+    print(f'Car {car.id}')
+
+print()
+
+print("All the existing cars are:")
+
+print()
+
+print('ID\tTop Speed\n----\t---------')
+for car in cars_list:
+    print(f'{car.id}\t{car.topSpeed}')
+
+print('\nHave a nice day!')
