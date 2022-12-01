@@ -3,7 +3,7 @@ from random import randint
 class Runner:
     def __init__(self, id, distance=0):
         self.id = id
-        self.distance = randint(10, 30) * 5
+        self.distance = randint(10, 30) * 5 #5 is hours, we can make that a variable if we so choose
 
     def __str__(self):
         return f'Runner {self.id} ran {self.distance} miles'
