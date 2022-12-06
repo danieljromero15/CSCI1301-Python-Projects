@@ -50,9 +50,12 @@ for car in cars_list:
         topSpeed = car.topSpeed #could do this another way but im already parsing the entire list so whatever
 
 #needs to be after other loop because def topSpeed var
-for car in cars_list:
-    if car.topSpeed == topSpeed:
-        top_speed_cars.append(car)
+#for car in cars_list:
+#    if car.topSpeed == topSpeed:
+#        top_speed_cars.append(car)
+
+# I didn't need to do this but I figured I needed more practice with this. The expanded form of this is above in lines 53-55
+[top_speed_cars.append(car) for car in cars_list if car.topSpeed == topSpeed]
 
 print()
 
@@ -69,8 +72,9 @@ print()
 #prints top speed based on previously calculated
 print(f'The highest speed is {topSpeed}')
 print('The following cars have the above speed:')
-for car in top_speed_cars:
-    print(f'Car {car.id}')
+#for car in top_speed_cars:
+#    print(f'Car {car.id}')
+[print(f'Car {car.id}') for car in top_speed_cars]
 
 print()
 
@@ -80,7 +84,8 @@ print()
 
 #prints all cars in a table
 print('ID\tTop Speed\n----\t---------')
-for car in cars_list:
-    print(f'{car.id}\t{car.topSpeed}')
+#for car in cars_list:
+#    print(f'{car.id}\t{car.topSpeed}')
+[print(f'{car.id}\t{car.topSpeed}') for car in cars_list]
 
 print('\nHave a nice day!')
